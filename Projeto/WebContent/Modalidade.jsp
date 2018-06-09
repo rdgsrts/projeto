@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="model.Modalidade" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +11,6 @@
         <title>Modalidade</title>
     </head>
     <body>
- 	<%Modalidade modalidade = (Modalidade)request.getAttribute("modalidade"); %>
  	<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -40,12 +39,12 @@
         <div class="row">
      		<div class="form-group col-md-6">
            		<label ><strong>Id</strong></label>
-                <p> <%=modalidade.getId() %></p>
+                <p> ${modalidade.id}</p>
 
             </div>
             <div class="form-group col-md-6">
             	<label ><strong>Modalidade</strong></label>
-                <p> <%=modalidade.getNome() %></p>
+                <p> ${modalidade.nome}</p>
             </div>
         </div>
         <hr>

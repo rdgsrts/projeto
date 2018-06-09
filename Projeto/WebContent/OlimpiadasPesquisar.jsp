@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ page import="model.Pais" %>
-<%@ page import="model.Modalidade" %>
-<%@ page import="model.Olimpiada" %>
-<%@ page import="java.util.List" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,7 +24,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="PaisCadastro.jsp">Países</a>
+                    <li><a href="PaisCadastro.jsp">PaÃ­ses</a>
                     </li>
                     <li><a href="ModalidadeCadastro.jsp">Modalidades</a>
                     </li>
@@ -36,45 +34,38 @@
     	</nav>
 		<br><br><br><br>
 		<div class="container">
-			<form action="ManterOlimpiada.do" method="post">
+			<form action="controller.do" method="post">
 			<h2 class="page-header">Pesquisar Medalhas</h2>
 			
 			<div class="row">
 				<div class="col-md-4">
 					<select type="text" name="pais" class="form-control">
-				    	<option>- Selecione uma opção -</option>
-				       	<%
-				       	List<Pais> pais = (List<Pais>)request.getAttribute("pais");
-				       	for(Pais p : pais){
-				       	%>
-				       	<option value="<%=p.getId()%>"><%=p.getNome()%></option>
-				       	<%}
-				       	%>    	
+						<option>- Selecione uma opÃ§Ã£o -</option>
+						<c:forEach var="p" items="${pais}">
+				    		
+				       		<option value="${p.id}">${p.nome }</option>
+				       	
+				       	</c:forEach>    	
     				</select>
 				</div>
 				<div class="col-md-4">
 					<select type="text" name="modalidade" class="form-control">
-				    	<option>- Selecione uma opção -</option>
-				       	<%
+				    	<option>- Selecione uma opÃ§Ã£o -</option>
+				       	<c:forEach var="m" items="${modalidade}">
+				    		
+				       		<option value="${m.id}">${m.nome }</option>
 				       	
-				       	List<Modalidade> modalidade = (List<Modalidade>)request.getAttribute("modalidade"); 
-				       	for(Modalidade m : modalidade){
-				       	%>
-				       	<option value="<%=m.getId()%>"><%=m.getNome()%></option>
-				       	<%}
-				       	%>    	
+				       	</c:forEach>  	
     				</select>
 				</div>
 				<div class="col-md-4">
 					<select type="text" name="ano" class="form-control">
-				    	<option>- Selecione uma opção -</option>
-				       	<%
-						List<Olimpiada> olimpiada = (List<Olimpiada>)request.getAttribute("olimpiada");
-				       	for(Olimpiada o : olimpiada){
-				       	%>
-				       	<option value="<%=o.getAno()%>"><%=o.getAno()%></option>
-				       	<%}
-				       	%>    	
+				    	<option>- Selecione uma opÃ§Ã£o -</option>
+				       	<c:forEach var="o" items="${olimpiada}">
+				    		
+				       		<option value="${o.ano}">${o.ano}</option>
+				       	
+				       	</c:forEach>  	
     				</select>
 				</div>
 				
@@ -83,7 +74,7 @@
 			<div class="row">
 				<div class="col-md-9"></div>
 				<div class="col-md-3 text-right">
-					<button type="submit" class="btn btn-primary" name="acao" value="carregarMedalhas">Pesquisar</button>
+					<button type="submit" class="btn btn-primary" name="command" value="CarregarMedalhas">Pesquisar</button>
 				</div>
 			</div>
 			</form>

@@ -7,7 +7,7 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<title>Cadastro de Pais</title>
+		<title>Cadastro de Olimpiada</title>
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -32,31 +32,49 @@
     	</nav>
 		<br><br>
 		<div class="container">
-			<h1 class="page-header">Cadastro de Pais</h1>
+			<h1 class="page-header">Cadastro de Olimpiada</h1>
 			<form action="controller.do" method="post">
 				<div class="row">
 					<div class="form-group col-md-12">
 							<label><strong>Pais</strong></label>
-							<input type="text" class="form-control" name="pais" placeholder="Digite o nome do Pais">
+							<input type="text" class="form-control" name="pais" value="${pais.nome }">
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col-md-6">
-							<label><strong>Populacao</strong></label>
-							<input type="text" class="form-control" name="populacao" placeholder="Digite a População">
+							<label><strong>Modalidade</strong></label>
+							<input type="text" class="form-control" name="modalidade" value="${modalidade.nome }">
 					</div>
 					<div class="form-group col-md-6">
-							<label><strong>Area</strong></label>
-							<input type="text" class="form-control" name="area" placeholder="Digite a Area do País">
+							<label><strong>Ano</strong></label>
+							<input type="text" class="form-control" name="ano" value="${olimpiada.ano}">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-3">
+							
+					</div>
+					<div class="form-group col-md-2">
+							<label><strong>Ouro</strong></label>
+							<input type="text" class="form-control" name="ouro" value="0">
+					</div>
+					<div class="form-group col-md-2">
+							<label><strong>Prata</strong></label>
+							<input type="text" class="form-control" name="prata" value="0">
+					</div>
+					<div class="form-group col-md-2">
+							<label><strong>Bronze</strong></label>
+							<input type="text" class="form-control" name="bronze" value="0">
 					</div>
 				</div>
 				<hr />
 				<div class="row text-right">
 	                	<div class="col-md-12">
-	                    	<button type="submit" class="btn btn-primary" name="command" value="CadastrarPais">Criar</button>	
+	                    	<button type="submit" class="btn btn-primary" name="command" value="CadastrarOlimpiadas">Cadastrar</button>	
 	                    		<a href="index.html" class="btn btn-default">Cancelar</a>
 	               		</div>
 	           	</div>
+	           	
 	           	</form>
 		</div>
 		

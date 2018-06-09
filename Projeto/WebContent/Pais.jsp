@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="model.Pais" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,7 +11,6 @@
 		<title>Cadastro de Pais</title>
 	</head>
 	<body>
-		<%Pais pais = (Pais)request.getAttribute("pais"); %>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -39,21 +38,21 @@
 				<div class="row">
 					<div class="form-group col-md-6">
 							<label><strong>Id</strong></label>
-							<p><%=pais.getId() %></p>
+							<p>${pais.id}</p>
 					</div>
 					<div class="form-group col-md-6">
 							<label for=><strong>Pais</strong></label>
-							<p><%=pais.getNome() %></p>
+							<p>${pais.nome}</p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col-md-6">
 							<label><strong>Populacao</strong></label>
-							<p><%=pais.getPopulacao() %></p>
+							<p>${pais.populacao}</p>
 					</div>
 					<div class="form-group col-md-6">
 							<label><strong>Area</strong></label>
-							<p><%=pais.getArea() %></p>
+							<p>${pais.area}</p>
 					</div>
 				</div>
 				<hr />
